@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans:wght@100..900&family=Open+Sans:wght@300..800&family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+    <title>Home</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+        <img src="LIMITLESSLOGO.png" alt="limitless logo" width="35"><h1>LIMITLESS</h1>
+        </div>
+
+        <div class="navigation">
+            <ul>
+                <a href="index.html"><li>HOME</li></a>
+                <a href="schedule.html"><li>SCHEDULE</li></a>
+                <a href="speakers.html"><li>SPEAKERS</li></a>
+                <a href="contacts.html"><li>CONTACT US</li></a>
+            </ul>
+        </div>
+        
+        <div class="button-reg">
+        <a href="registerform.html"><button class="register-btn">REGISTER</button></a>
+        </div>
+    </nav>
+
+    <section class="container description">
+        <div class="head-title">
+            <h3>EVENT CONFERENCE</h3>
+            <h1><span style="color: #00882F;">LIMITLESS: </span>RISE, LEAD, <br>TRANSFORM</h1>
+            <p>Empowering Women to Shatter Barriers, Own Their <br>Power, and Create Legacy</p>
+
+            <h2 class="header">EVENT STARTS IN:</h2>
+            <div class="events">
+                <div class="box">
+                    <h3 id="countdown-days">00</h3>
+                    <h4>DAYS</h4>
+                </div>
+                <div class="box">
+                    <h3 id="countdown-hours">00</h3>
+                    <h4>HRS</h4>
+                </div>
+                <div class="box">
+                    <h3 id="countdown-minutes">00</h3>
+                    <h4>MINS</h4>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="img-container">
+            <img src="mainspeaker.png" alt="Main Speaker" width="700">
+        </div>
+
+    </section>
+
+    <section class="container about">
+        <div class="summit">
+            <div class="grid">
+                <h3>ABOUT THE CONFERENCE</h3>
+                <h1>THE GLOBAL WOMEN'S <br>POWER SUMMIT</h1>
+                <img src="globalsummit.png" alt="Global Summit" class="globalsummit" width="400">
+            </div>
+            <div class="grid">
+                <p>The "Limitless: Rise, Lead, Transform" conference is a 3-day immersive experience designed to equip women with the mindset, skills, and network to break through personal and professional barriers.</p>
+                <h2>Key Benefits:</h2>
+                
+                <div class="benefit-item">
+                    <img src="grow.png" alt="Grow" class="benefit-icon">
+                    <div class="benefit-text">
+                        <h3><span style="font-weight: 800;"> Confidence: </span>Overcome self-doubt and <br>own your voice</h3>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <img src="gain.png" alt="Gain" class="benefit-icon">
+                    <div class="benefit-text">
+                        <h3><span style="font-weight: 800;">Gain Tools: </span>Master negotiation, branding,<br> and advocacy skills.</h3>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <img src="build.png" alt="Build" class="benefit-icon">
+                    <div class="benefit-text">
+                        <h3><span style="font-weight: 800;">Build Community: </span>Connect with mentors <br>and like-minded women.</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="LIMITLESSLOGO.png" alt="Limitless Logo" width="40">
+            <span>LIMITLESS</span>
+          </div>
+          
+          <div class="footer-links">
+            <div class="link-group">
+              <h4>Menu</h4>
+              <a href="schedule.html">Schedule</a>
+              <a href="speakers.html">Speaker</a>
+              <a href="contacts.html">Contact Us</a>
+            </div>
+            
+            <div class="link-group">
+              <h4>Connect</h4>
+              <a href="https://www.facebook.com/">Facebook</a>
+              <a href="https://www.twitter.com/">Twitter</a>
+              <a href="https://www.instagram.com/">Instagram</a>
+              <a href="https://www.linkedin.com/">LinkedIn</a>
+            </div>
+    
+            <div class="link-group">
+              <h4>Contact Us</h4>
+              <a href="#">Phone: +1 (555) 987-6543</a>
+              <a href="#">Email: contact@limitlessconference.com</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>© 2025 Limitless Women's Summit. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    <script>
+        const countDownDate = new Date("August 7, 2025 09:00:00").getTime();
+        const countdownFunction = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+        
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        document.getElementById("countdown-days").innerHTML = days.toString().padStart(2, "0");
+        document.getElementById("countdown-hours").innerHTML = hours.toString().padStart(2, "0");
+        document.getElementById("countdown-minutes").innerHTML = minutes.toString().padStart(2, "0");
+
+        if (distance < 0) {
+            clearInterval(countdownFunction);
+            document.querySelector(".events").innerHTML = "<div class='event-started'>The event has begun!</div>";
+            }
+        }, 1000);
+    </script>
+</body>
+

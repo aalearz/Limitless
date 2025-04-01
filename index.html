@@ -131,30 +131,29 @@
         </div>
       </footer>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const navbar = document.querySelector('.navbar');
-            const navigation = document.querySelector('.navigation');
-            
-            console.log('Script loaded'); 
-            
-            navbar.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768 && e.clientX > window.innerWidth * 0.8) {
-                    console.log('Burger clicked'); 
-                    navbar.classList.toggle('active');
-                    navigation.classList.toggle('active');
-                }
-            });
-
-            document.querySelectorAll('.navigation a').forEach(link => {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth <= 768) {
-                        navbar.classList.remove('active');
-                        navigation.classList.remove('active');
-                    }
-                });
-            });
+    document.addEventListener('DOMContentLoaded', function() {
+        const navbar = document.querySelector('.navbar');
+        const navigation = document.querySelector('.navigation');
+        const buttonReg = document.querySelector('.button-reg'); 
+        
+        navbar.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768 && e.clientX > window.innerWidth * 0.8) {
+                navbar.classList.toggle('active');
+                navigation.classList.toggle('active');
+                buttonReg.classList.toggle('active'); 
+            }
         });
 
+        document.querySelectorAll('.navigation a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    navbar.classList.remove('active');
+                    navigation.classList.remove('active');
+                    buttonReg.classList.remove('active');
+                }
+            });
+        });
+    });
         //for countdown
 
         const countDownDate = new Date("August 7, 2025 09:00:00").getTime();

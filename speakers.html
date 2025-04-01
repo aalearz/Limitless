@@ -31,7 +31,6 @@
     </nav>
 
     <section class="container speakers">
-        <img src="speakers.png">
     </div>
     </section>
     <footer class="footer">
@@ -70,4 +69,30 @@
           </div>
         </div>
       </footer>
+
+      <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          const navbar = document.querySelector('.navbar');
+          const navigation = document.querySelector('.navigation');
+          const buttonReg = document.querySelector('.button-reg');
+          
+          navbar.addEventListener('click', function(e) {
+              if (window.innerWidth <= 768 && e.clientX > window.innerWidth * 0.8) {
+                  navbar.classList.toggle('active');
+                  navigation.classList.toggle('active');
+                  buttonReg.classList.toggle('active'); 
+              }
+          });
+
+          document.querySelectorAll('.navigation a').forEach(link => {
+              link.addEventListener('click', function() {
+                  if (window.innerWidth <= 768) {
+                      navbar.classList.remove('active');
+                      navigation.classList.remove('active');
+                      buttonReg.classList.remove('active');
+                  }
+              });
+          });
+      });
+        </script>
 </body>

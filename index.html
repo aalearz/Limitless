@@ -131,23 +131,20 @@
         </div>
       </footer>
     <script>
-        // Replace your current script with this more robust version
         document.addEventListener('DOMContentLoaded', function() {
             const navbar = document.querySelector('.navbar');
             const navigation = document.querySelector('.navigation');
             
-            console.log('Script loaded'); // Check if this appears in console
+            console.log('Script loaded'); 
             
             navbar.addEventListener('click', function(e) {
-                // Check if click is on right 20% of screen (burger area)
                 if (window.innerWidth <= 768 && e.clientX > window.innerWidth * 0.8) {
-                    console.log('Burger clicked'); // Should appear when clicking
+                    console.log('Burger clicked'); 
                     navbar.classList.toggle('active');
                     navigation.classList.toggle('active');
                 }
             });
-            
-            // Close menu when clicking links
+
             document.querySelectorAll('.navigation a').forEach(link => {
                 link.addEventListener('click', function() {
                     if (window.innerWidth <= 768) {

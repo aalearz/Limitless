@@ -73,21 +73,21 @@
                 <div class="benefit-item">
                     <img src="grow.png" alt="Grow" class="benefit-icon">
                     <div class="benefit-text">
-                        <h3><span style="font-weight: 800;"> Confidence: </span>Overcome self-doubt and <br>own your voice</h3>
+                        <h3><span style="font-weight: 800;"> Confidence: </span>Overcome self-doubt and own your voice</h3>
                     </div>
                 </div>
                 
                 <div class="benefit-item">
                     <img src="gain.png" alt="Gain" class="benefit-icon">
                     <div class="benefit-text">
-                        <h3><span style="font-weight: 800;">Gain Tools: </span>Master negotiation, branding,<br> and advocacy skills.</h3>
+                        <h3><span style="font-weight: 800;">Gain Tools: </span>Master negotiation, branding, and advocacy skills.</h3>
                     </div>
                 </div>
                 
                 <div class="benefit-item">
                     <img src="build.png" alt="Build" class="benefit-icon">
                     <div class="benefit-text">
-                        <h3><span style="font-weight: 800;">Build Community: </span>Connect with mentors <br>and like-minded women.</h3>
+                        <h3><span style="font-weight: 800;">Build Community: </span>Connect with mentors and like-minded women.</h3>
                     </div>
                 </div>
             </div>
@@ -131,6 +131,35 @@
         </div>
       </footer>
     <script>
+        // Replace your current script with this more robust version
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.querySelector('.navbar');
+            const navigation = document.querySelector('.navigation');
+            
+            console.log('Script loaded'); // Check if this appears in console
+            
+            navbar.addEventListener('click', function(e) {
+                // Check if click is on right 20% of screen (burger area)
+                if (window.innerWidth <= 768 && e.clientX > window.innerWidth * 0.8) {
+                    console.log('Burger clicked'); // Should appear when clicking
+                    navbar.classList.toggle('active');
+                    navigation.classList.toggle('active');
+                }
+            });
+            
+            // Close menu when clicking links
+            document.querySelectorAll('.navigation a').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        navbar.classList.remove('active');
+                        navigation.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        //for countdown
+
         const countDownDate = new Date("August 7, 2025 09:00:00").getTime();
         const countdownFunction = setInterval(function() {
         const now = new Date().getTime();
@@ -149,6 +178,5 @@
             document.querySelector(".events").innerHTML = "<div class='event-started'>The event has begun!</div>";
             }
         }, 1000);
-    </script>
-</body>
-
+        </script>
+    </body>

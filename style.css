@@ -59,12 +59,17 @@ p{
     align-items: center;
     box-sizing: border-box; 
     padding: 0 20px; 
+    width: 100%;
+    background-color: rgba(28, 53, 37, 0.5); /* semi-transparent background */
+    backdrop-filter: blur(10px); /* creates the blur effect */
+    -webkit-backdrop-filter: blur(10px); /* for Safari support */
 }
 .navbar a{
     color: #f0f0f0;
     text-decoration: none;
     margin-bottom: 0.5rem;
     transition: color 0.3s;
+    
 }
 .navbar a:hover {
     color: #00882F;
